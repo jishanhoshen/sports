@@ -1,189 +1,21 @@
 import React, { Component } from "react";
+import BarDay from "../components/BarDay";
+import BoxDay from "../components/BoxDay";
 import Header from "../components/Header";
-import Slider from "react-slick";
+import RoundedDay from "../components/RoundedDay";
+
 
 export default class HomeScreen extends Component {
   render() {
-    var settings = {
-      infinite: true,
-      speed: 500,
-      slidesToShow: 6,
-      slidesToScroll: 2,
-      initialSlide: 0,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 5,
-            slidesToScroll: 2,
-          },
-        },
-        {
-          breakpoint: 800,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 2,
-          },
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            initialSlide: 1,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          },
-        },
-        {
-          breakpoint: 320,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          },
-        },
-      ],
-    };
+
     return (
       <>
         <Header />
         <div className="bodyContent content-scrall snap-none">
-          <div className="daybox bg-slate-50 rounded-tl rounded-bl p-4 my-5 ml-5">
-            <div className="title flex justify-between items-center">
-              <h2 className="font-roboto font-bold text-2xl">Best Matches</h2>
-              <span className="text-sm text-slate-500 font-medium mr-8">
-                View All
-              </span>
-            </div>
-            <Slider {...settings}>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-red-500 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-blue-500 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-yellow-500 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-red-500 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-violet-700 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-pink-500 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-red-900 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-green-700 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-red-500 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-blue-500 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-yellow-500 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-red-500 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-violet-700 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-pink-500 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-red-900 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-green-700 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-red-500 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-blue-500 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-yellow-500 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-red-500 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-violet-700 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-pink-500 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
-                  <div className="h-14 w-14 bg-red-900 rounded-full flex items-center justify-center">
-                    <img src="./icons/team-1.png" />
-                  </div>
-                  <div className="h-14 w-14 bg-green-700 rounded-full  flex items-center justify-center">
-                    <img src="./icons/team-2.png" />
-                  </div>
-                </div>
-              </div>
-            </Slider>
-          </div>
-          <p className="p-4">
+          <RoundedDay />
+          <BoxDay />
+          <BarDay />
+          <p className="p-4 text-slate-50">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
             lobortis, magna non aliquam imperdiet, neque risus dapibus erat, in
             ultricies augue enim sit amet lacus. Cras sed ultricies velit. Sed

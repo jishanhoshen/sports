@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.text-strock-3{
+.text-strock-3 {
   -webkit-text-stroke-width: 3px;
 }
 
@@ -14,10 +14,10 @@ body {
 @tailwind components;
 @tailwind utilities;
 
-#root{
+#root {
   overflow: hidden;
 }
-.content-scrall{
+.content-scrall {
   overflow-y: scroll;
   scroll-behavior: smooth;
   height: calc(100vh - (7rem + 3.5rem));
@@ -41,8 +41,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: none;
 }
-.navbar{
-  a.active{
+.navbar {
+  a.active {
     color: rgb(248, 250, 252);
     background-color: rgb(15, 23, 42);
     border-width: 2px;
@@ -50,35 +50,41 @@ body {
     height: 3.5rem;
     position: relative;
     bottom: 2rem;
-    &::after{
+    &::after {
       position: absolute;
       bottom: -1.5rem;
       color: rgb(15, 23, 42);
     }
-    &:nth-child(1){
-      &:after{
-        content: 'Club';
+    &:nth-child(1) {
+      &:after {
+        content: "Club";
       }
     }
-    &:nth-child(2){
-      &:after{
-        content: 'Home';
+    &:nth-child(2) {
+      &:after {
+        content: "Home";
       }
     }
-    &:nth-child(3){
-      &:after{
-        content: 'Public';
+    &:nth-child(3) {
+      &:after {
+        content: "Public";
       }
-
     }
   }
 }
 
-.slick-slider{
-  .slick-arrow{
+.clubnav {
+  .active {
+    color: rgb(248, 250, 252);
+    background-color: rgb(15, 23, 42);
+  }
+}
+
+.slick-slider {
+  .slick-arrow {
     display: none !important;
   }
-  .slick-list{
+  .slick-list {
     padding: 10px 0px;
   }
 }

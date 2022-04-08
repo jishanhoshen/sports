@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import AppLayout from "./pages/AppLayout";
 import HomeScreen from "./pages/HomeScreen";
-import ClubScreen from "./pages/ClubScreen";
+import ClubMatches from "./pages/ClubMatches";
+import ClubPlayers from "./pages/ClubPlayers";
 import ProfileScreen from "./pages/ProfileScreen";
 import NotFound from "./pages/NotFound";
 
@@ -12,7 +13,8 @@ function App() {
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route index element={<HomeScreen />}/>
-            <Route path="club" element={<ClubScreen />}/>
+            <Route path="club/matches" element={<ClubMatches />}/>
+            <Route path="club/players" element={<ClubPlayers />}/>
             <Route path="profile" element={<ProfileScreen />}/>
             <Route path="*" element={<NotFound />}/>
           </Route>

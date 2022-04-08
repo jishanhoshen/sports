@@ -8,19 +8,19 @@ export default class Navbar extends Component {
     return (
       <div className="navbar absolute inset-x-0 bottom-0 w-screen h-14 bg-slate-50 flex justify-around ">
         <NavLink
-          className="flex items-center w-14 cursor-pointer justify-center"
-          to={"/club"}
+          className="club flex items-center w-14 cursor-pointer justify-center"
+          to={"/club/matches"}
         >
           <FontAwesomeIcon icon={faUsers} />
         </NavLink>
         <NavLink
-          className="flex items-center w-14 cursor-pointer justify-center"
+          className="home flex items-center w-14 cursor-pointer justify-center"
           to={"/"}
         >
           <FontAwesomeIcon icon={faHome} />
         </NavLink>
         <NavLink
-          className="flex items-center w-14 cursor-pointer justify-center"
+          className="profile flex items-center w-14 cursor-pointer justify-center"
           to={"profile"}
         >
           <FontAwesomeIcon icon={faUser} />
