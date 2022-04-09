@@ -5,7 +5,6 @@ import Slider from "react-slick";
 export default class RoundedDay extends Component {
   render() {
     var Roundedaysettings = {
-      infinite: true,
       speed: 500,
       slidesToShow: 6,
       slidesToScroll: 3,
@@ -30,7 +29,6 @@ export default class RoundedDay extends Component {
           settings: {
             slidesToShow: 3,
             slidesToScroll: 2,
-            initialSlide: 1,
           },
         },
         {
@@ -59,7 +57,7 @@ export default class RoundedDay extends Component {
           <Slider {...Roundedaysettings}>
             <div>
               <Link to={"/day/1"}>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
+                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4 my-2">
                   <div className="h-14 w-14 bg-red-500 rounded-full flex items-center justify-center">
                     <img src="./icons/team-1.png" />
                   </div>
@@ -71,7 +69,7 @@ export default class RoundedDay extends Component {
             </div>
             <div>
               <Link to={"/day/2"}>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
+                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4 my-2">
                   <div className="h-14 w-14 bg-yellow-500 rounded-full flex items-center justify-center">
                     <img src="./icons/team-1.png" />
                   </div>
@@ -83,7 +81,7 @@ export default class RoundedDay extends Component {
             </div>
             <div>
               <Link to={"/day/3"}>
-                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4">
+                <div className="days h-16 w-36 bg-slate-50 shadow-md rounded-full flex items-center justify-around mr-4 my-2">
                   <div className="h-14 w-14 bg-rose-500 rounded-full flex items-center justify-center">
                     <img src="./icons/team-1.png" />
                   </div>

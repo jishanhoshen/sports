@@ -4,7 +4,6 @@ import Slider from "react-slick";
 
 export default class BoxDay extends Component {
   render() {
-    console.log(window.location);
     var BoxDaysettings = {
       speed: 500,
       slidesToShow: 6,
