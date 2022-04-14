@@ -60,7 +60,7 @@ export default class BoxDay extends Component {
           <div className="ml-5">
             <Slider {...BoxDaysettings}>
               <Link to={'/comming'}>
-                <div className="bg-yellow-500 w-36 h-44 mr-4 rounded-lg px-3">
+                <div className="bg-yellow-500 w-36 h-44 mr-4 rounded-lg px-3 mb-2">
                   <div className="flex justify-around py-6">
                     <img
                       src={window.location.origin + "/icons/team-1.png"}
@@ -84,7 +84,7 @@ export default class BoxDay extends Component {
                 </div>
               </Link>
               <Link to={'/comming'}>
-                <div className="bg-slate-50 w-36 h-44 mr-4 rounded-lg px-3">
+                <div className="bg-slate-50 w-36 h-44 mr-4 rounded-lg px-3 mb-2">
                   <div className="flex justify-around py-6">
                     <img
                       src={window.location.origin + "/icons/team-1.png"}
@@ -108,7 +108,7 @@ export default class BoxDay extends Component {
                 </div>
               </Link>
               <Link to={'/comming'}>
-                <div className="bg-blue-500 w-36 h-44 mr-4 rounded-lg px-3">
+                <div className="bg-blue-500 w-36 h-44 mr-4 rounded-lg px-3 mb-2">
                   <div className="flex justify-around py-6">
                     <img
                       src={window.location.origin + "/icons/team-1.png"}
@@ -132,7 +132,7 @@ export default class BoxDay extends Component {
                 </div>
               </Link>
               <Link to={'/comming'}>
-                <div className="bg-red-500 w-36 h-44 mr-4 rounded-lg px-3">
+                <div className="bg-red-500 w-36 h-44 mr-4 rounded-lg px-3 mb-2">
                   <div className="flex justify-around py-6">
                     <img
                       src={window.location.origin + "/icons/team-1.png"}

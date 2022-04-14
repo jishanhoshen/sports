@@ -67,7 +67,7 @@ body {
     }
     &:nth-child(3) {
       &:after {
-        content: "Public";
+        content: "Profile";
       }
     }
   }
@@ -87,4 +87,17 @@ body {
   .slick-list {
     padding: 10px 0px;
   }
+}
+
+a:focus{
+  outline: none;
+}
+*{
+  -webkit-tap-highlight-color: transparent;
+}
+.profile-bodycontent{
+  height: calc(100vh - 3.5rem);
+}
+.profile-bodyMarginTop{
+  margin-top: calc(100vh / 3);
 }
