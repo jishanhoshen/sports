@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGears,
+  faPlus,
+  faStar,
+  faStarHalfAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
 
 export default class ProfileScreen extends Component {
   render() {
     return (
       <>
-        <div className="relative h-1/3  overflow-hidden ">
+        <div className="relative h-1/3  overflow-hidden font-roboto ">
           <div className="absolute text-center pl-5 pt-14">
             <div className="bg-slate-50 rounded-full h-9 w-9 flex justify-center items-center m-auto border-2 border-slate-300 border-solid">
               <img
@@ -21,7 +26,7 @@ export default class ProfileScreen extends Component {
             <div className="absolute text-slate-50 font-medium">10</div>
             <img src={window.location.origin + "/icons/jersey.png"} />
           </div>
-          <div className="absolute text-center text-xs bottom-5 right-5 text-base text-amber-500">
+          <div className="absolute text-center bottom-5 right-5 text-base text-xs text-amber-500">
             <div className="absolute bg-slate-500 blur opacity-50 h-7 w-24 z-0"></div>
             <div className="relative z-10">
               <FontAwesomeIcon icon={faStar} />
@@ -38,24 +43,31 @@ export default class ProfileScreen extends Component {
           />
         </div>
         <div className="absolute top-0 z-10">
+          <div className="absolute bottom-10 right-0 z-10 bg-slate-50 py-1 pr-4 pl-2 rounded-l-full shadow shadow-slate-700">
+            <FontAwesomeIcon icon={faGears} />
+          </div>
           <div className="overflow-y-scroll scroll-smooth snap-none profile-bodycontent">
             <div className="profile-bodyMarginTop relative flex flex-col">
+              <div className="absolute -top-10 flex items-center px-2 py-1 text-xs font-bold ml-3 rounded bg-slate-50 ">
+                <FontAwesomeIcon icon={faPlus} className="pr-2" />
+                <div>Rate Me</div>
+              </div>
               <div className="flex absolute w-full">
                 <div className="w-1/3">
                   <div className="bg-slate-50 mx-3 h-full rounded p-2 text-center shadow-lg">
-                    <div className="text-3xl pt-6 pb-3">10</div>
-                    <div className="text-xs">Man of the match</div>
+                    <div className="text-3xl font-bold pt-6 pb-3">10</div>
+                    <div className="text-xs">Man of The Match</div>
                   </div>
                 </div>
                 <div className="w-1/3">
                   <div className="bg-slate-50 mx-3 h-full rounded p-2 text-center shadow-lg">
-                    <div className="text-3xl pt-6 pb-3">10</div>
+                    <div className="text-3xl font-bold pt-6 pb-3">10</div>
                     <div className="text-xs">Best Player</div>
                   </div>
                 </div>
                 <div className="w-1/3">
                   <div className="bg-slate-50 mx-3 h-full rounded p-2 text-center shadow-lg">
-                    <div className="text-3xl pt-6 pb-3">10</div>
+                    <div className="text-3xl font-bold pt-6 pb-3">10</div>
                     <div className="text-xs">Goal</div>
                   </div>
                 </div>
@@ -93,7 +105,7 @@ export default class ProfileScreen extends Component {
                   </div>
                 </div>
               </div>
-              <p className="text-xs text-slate-50 ">
+              <p className="text-xs text-slate-50 p-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                 eu nibh sed turpis ullamcorper lacinia. Nam eu libero dignissim,
                 bibendum velit ut, bibendum orci. Pellentesque et ipsum in mi
@@ -169,6 +181,7 @@ export default class ProfileScreen extends Component {
                 tortor erat, a vestibulum velit sagittis facilisis. Fusce nec
                 iaculis ante, non efficitur diam.
               </p>
+              <div className="bottomPadding pb-10"></div>
             </div>
           </div>
         </div>

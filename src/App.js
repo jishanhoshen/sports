@@ -4,6 +4,7 @@ import HomeScreen from "./pages/HomeScreen";
 import ClubMatches from "./pages/ClubMatches";
 import ClubPlayers from "./pages/ClubPlayers";
 import ProfileScreen from "./pages/ProfileScreen";
+import SingleMatch from "./pages/SingleMatch";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route index element={<HomeScreen />}/>
             <Route path="club/matches" element={<ClubMatches />}/>
             <Route path="club/players" element={<ClubPlayers />}/>
+            <Route path="match" element={<SingleMatch />}/>
             <Route path="profile" element={<ProfileScreen />}/>
             <Route path="*" element={<NotFound />}/>
           </Route>
