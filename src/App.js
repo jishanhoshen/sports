@@ -6,6 +6,7 @@ import ClubPlayers from "./pages/ClubPlayers";
 import ProfileScreen from "./pages/ProfileScreen";
 import SingleMatch from "./pages/SingleMatch";
 import NotFound from "./pages/NotFound";
+import Test from "./pages/Test";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route index element={<HomeScreen />}/>
+            {/* <Route path="profile" element={<ProfileScreen />}/> */}
             <Route path="club/matches" element={<ClubMatches />}/>
             <Route path="club/players" element={<ClubPlayers />}/>
             <Route path="match" element={<SingleMatch />}/>

@@ -50,7 +50,7 @@ export default function BoxDay() {
   return (
     <>
       <div>
-        <div className="title flex justify-between items-center mx-5">
+        <div className="title flex justify-between items-center mx-5 mt-5">
           <h2 className="font-roboto font-bold text-2xl text-slate-50">
             Comming Matches
           </h2>

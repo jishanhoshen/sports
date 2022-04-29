@@ -24,7 +24,9 @@ export default class Shield extends Component {
               clipRule="evenodd"
               // d="M0 0V19.6376L17.0606 36.0839L34 19.7544V0.0164495L17.0606 2.31638L0 0ZM17.0606 2.33287L17.0831 2.33593H17.038L17.0606 2.33287ZM17.0606 36.201L17.0832 36.2228H17.038L17.0606 36.201Z"
               d={"M 0 0 L "+(size / 2)+" " +(size / 6)+ " L "+(size)+" 0 L "+(size)+" "+( (size / 100) * 70)+" L "+(size/2)+" "+(size)+" L 0 "+((size / 100) * 70)+" L 0 0"}
-              fill="#C4C4C4"
+              fill={this.props.fill}
+              stroke={this.props.stroke}
+              strokeWidth="1"
             />
           </svg>
         </div>

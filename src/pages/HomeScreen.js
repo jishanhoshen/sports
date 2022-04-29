@@ -4,8 +4,8 @@ import BoxDay from "../components/BoxDay";
 import Header from "../components/Header";
 import RoundedDay from "../components/RoundedDay";
 
-
 export default class HomeScreen extends Component {
+
   render() {
 
     return (

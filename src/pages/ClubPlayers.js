@@ -5,18 +5,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
 import Shield from "../components/Shield";
-import profile from '../assets/profile-short.jpg';
 
 export default class ClubPlayers extends Component {
   render() {
-    const top = [22,15,14,8,4,2,6,9,5,1,3,19];
-    const all = [30,16,10,7,11,17,20,24,18,23,27,13,21,29,25,26,12,28,31];
+    const top = [22, 15, 14, 8, 4, 2, 6, 9, 5, 1, 3, 19];
+    const all = [
+      30, 16, 10, 7, 11, 17, 20, 24, 18, 23, 27, 13, 21, 29, 25, 26, 12, 28, 31,
+    ];
     const top13 = top.map((top) => (
       <div className="relative w-1/3 inline-block text-center">
         <div className="relative w-20 h-20  m-auto">
-          <Shield value={top} style="absolute top-6 right-2 text-xs" size={20} />
+          <Shield
+            value={top}
+            style="absolute top-6 right-2 text-xs"
+            size={20}
+            fill="#C4C4C4"
+          />
           <img
-            src={window.location.origin + "/image/profile-short.jpg"}
+            // src={window.location.origin + "/image/profile.jpg"}
+            src={"https://100k-faces.glitch.me/random-image?id=" + top}
             className="w-20 h-20 object-cover object-top rounded-full mt-4 mb-3  border-2 border-slate-500 border-solid"
           />
         </div>
@@ -24,14 +31,19 @@ export default class ClubPlayers extends Component {
     ));
     const allPlayersWithOutTop13 = all.map((all) => (
       <div className="relative w-1/3 inline-block text-center">
-      <div className="relative w-20 h-20  m-auto">
-        <Shield value={all} style="absolute top-6 right-2 text-xs" size={20} />
-        <img
-          src={profile}
-          className="w-20 h-20 object-cover object-top rounded-full mt-4 mb-3 border-2 border-slate-800 border-solid"
-        />
+        <div className="relative w-20 h-20  m-auto">
+          <Shield
+            value={all}
+            style="absolute top-6 right-2 text-xs"
+            size={20}
+            fill="#C4C4C4"
+          />
+          <img
+            src={"https://100k-faces.glitch.me/random-image?id=" + all}
+            className="w-20 h-20 object-cover object-top rounded-full mt-4 mb-3 border-2 border-slate-800 border-solid"
+          />
+        </div>
       </div>
-    </div>
     ));
     return (
       <>
@@ -42,9 +54,14 @@ export default class ClubPlayers extends Component {
             <div className="bg-slate-50 rounded-xl py-4 px-2 flex h-36">
               <div className="w-1/4 flex items-center flex-col">
                 <div className="relative">
-                  <Shield value="1" style="absolute top-6 right-2 text-xs" size={20} />
+                  <Shield
+                    value="1"
+                    style="absolute top-6 right-2 text-xs"
+                    size={20}
+                    fill="#C4C4C4"
+                  />
                   <img
-                    src={profile}
+                    src={"https://100k-faces.glitch.me/random-image"}
                     className="w-16 h-16 object-cover object-top rounded-full mt-4 mb-3"
                   />
                 </div>
@@ -63,7 +80,7 @@ export default class ClubPlayers extends Component {
                 <div className="flex">
                   <div className="w-1/3 text-center">
                     <div className="pb-2">
-                      <Shield value="1" style="relative" />
+                      <Shield value="1" style="relative" fill="#C4C4C4" />
                     </div>
                     <div className="text-xs scale-75 mt-2">
                       Man of The Match
@@ -71,13 +88,13 @@ export default class ClubPlayers extends Component {
                   </div>
                   <div className="w-1/3 text-center">
                     <div className="pb-2">
-                      <Shield value="1" style="relative" />
+                      <Shield value="1" style="relative" fill="#C4C4C4" />
                     </div>
                     <div className="text-xs scale-75 mt-2">Best Player</div>
                   </div>
                   <div className="w-1/3 text-center">
                     <div className="pb-2">
-                      <Shield value="1" style="relative" />
+                      <Shield value="1" style="relative" fill="#C4C4C4" />
                     </div>
                     <div className="text-xs scale-75 mt-2">Goals</div>
                   </div>
