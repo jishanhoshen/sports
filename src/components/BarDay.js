@@ -1,75 +1,107 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-export default class BarDay extends Component {
-  render() {
-    return (
-      <>
-        <div className="mx-5">
-          <div className="title flex justify-between items-center py-4">
-            <h2 className="font-roboto font-bold text-2xl text-slate-50">
-              Recent Matches
-            </h2>
-            <span className="text-sm text-slate-500 font-medium">View All</span>
-          </div>
-          <Link to={'/recent'} className="flex justify-center items-center bg-slate-50 rounded-lg px-4 py-2 mb-4 font-bold">
-            <div className="flex flex-col justify-center">
-              <img src={window.location.origin + "/icons/team-1.png"} className="h-10 object-contain" />
-              <p className="text-xs">Barcelona</p>
-            </div>
-            <div className="flex flex-col text-center mx-8">
-              <div className="text-3xl pb-1">0 - 0</div>
-              <div className="text-xs">21/12/21</div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <img src={window.location.origin + "/icons/team-2.png"} className="h-10 object-contain" />
-              <p className="text-xs">Real Madrid</p>
-            </div>
-          </Link>
-          <Link to={'/recent'} className="flex justify-center items-center bg-slate-50 rounded-lg px-4 py-2 mb-4 font-bold">
-            <div className="flex flex-col justify-center">
-              <img src={window.location.origin + "/icons/team-1.png"} className="h-10 object-contain" />
-              <p className="text-xs">Barcelona</p>
-            </div>
-            <div className="flex flex-col text-center mx-8">
-              <div className="text-3xl pb-1">0 - 0</div>
-              <div className="text-xs">21/12/21</div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <img src={window.location.origin + "/icons/team-2.png"} className="h-10 object-contain" />
-              <p className="text-xs">Real Madrid</p>
-            </div>
-          </Link>
-          <Link to={'/recent'} className="flex justify-center items-center bg-slate-50 rounded-lg px-4 py-2 mb-4 font-bold">
-            <div className="flex flex-col justify-center">
-              <img src={window.location.origin + "/icons/team-1.png"} className="h-10 object-contain" />
-              <p className="text-xs">Barcelona</p>
-            </div>
-            <div className="flex flex-col text-center mx-8">
-              <div className="text-3xl pb-1">0 - 0</div>
-              <div className="text-xs">21/12/21</div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <img src={window.location.origin + "/icons/team-2.png"} className="h-10 object-contain" />
-              <p className="text-xs">Real Madrid</p>
-            </div>
-          </Link>
-          <Link to={'/recent'} className="flex justify-center items-center bg-slate-50 rounded-lg px-4 py-2 mb-4 font-bold">
-            <div className="flex flex-col justify-center">
-              <img src={window.location.origin + "/icons/team-1.png"} className="h-10 object-contain" />
-              <p className="text-xs">Barcelona</p>
-            </div>
-            <div className="flex flex-col text-center mx-8">
-              <div className="text-3xl pb-1">0 - 0</div>
-              <div className="text-xs">21/12/21</div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <img src={window.location.origin + "/icons/team-2.png"} className="h-10 object-contain" />
-              <p className="text-xs">Real Madrid</p>
-            </div>
-          </Link>
+const BarDay = (props) => {
+  const title = props.title;
+  const [isdata, setIsData] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const data = useSelector((state) => state.MatchReducer.MatchHistory);
+  
+  useEffect(() => {
+    if (props.try) {
+      setIsData(false);
+      setLoading(true);
+    } else if (data.length == 0) {
+      setIsData(false);
+      setLoading(true);
+    } else {
+      setIsData(true);
+      setLoading(false);
+    }
+  });
+
+  return (
+    <>
+      <div className="mx-5">
+        <div className="title flex justify-between items-center py-4">
+          <h2 className="font-roboto font-bold text-2xl text-slate-50">
+            {title}
+          </h2>
+          <span className="text-sm text-slate-500 font-medium">View All</span>
         </div>
-      </>
-    );
-  }
-}
+        <div>
+          {(loading && (
+            <div>
+              <div className="flex justify-center items-center bg-slate-50 rounded-lg px-4 py-2 mb-4 font-bold">
+                <div className="flex flex-col items-center">
+                  <div className="w-10 h-10 bg-slate-200 mb-3"></div>
+                  <p className=" bg-slate-200 w-16 h-2"></p>
+                </div>
+                <div className="flex flex-col text-center mx-8 text-slate-300">
+                  <div className="text-3xl pb-1 ">0 - 0</div>
+                  <div className="text-xs">00/00/0000</div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-10 h-10 bg-slate-200 mb-3"></div>
+                  <p className=" bg-slate-200 w-16 h-2"></p>
+                </div>
+              </div>
+              <div className="flex justify-center items-center bg-slate-50 rounded-lg px-4 py-2 mb-4 font-bold">
+                <div className="flex flex-col items-center">
+                  <div className="w-10 h-10 bg-slate-200 mb-3"></div>
+                  <p className=" bg-slate-200 w-16 h-2"></p>
+                </div>
+                <div className="flex flex-col text-center mx-8 text-slate-300">
+                  <div className="text-3xl pb-1 ">0 - 0</div>
+                  <div className="text-xs">00/00/0000</div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-10 h-10 bg-slate-200 mb-3"></div>
+                  <p className=" bg-slate-200 w-16 h-2"></p>
+                </div>
+              </div>
+            </div>
+          )) ||
+            (isdata &&
+              data.map((item) => (
+                <Link
+                  key={item.id}
+                  to={"/recent"}
+                  className="flex justify-center items-center bg-slate-50 rounded-lg px-4 py-2 mb-4 font-bold"
+                >
+                  <div className="flex flex-col items-center">
+                    <img
+                      src={
+                        window.location.origin +
+                        "/image/team/" +
+                        item.team_1_logo
+                      }
+                      className="h-10 object-contain mb-2"
+                    />
+                    <p className="text-xs">{item.team_1_cap_name}</p>
+                  </div>
+                  <div className="flex flex-col text-center mx-8">
+                    <div className="text-3xl pb-1">0 - 0</div>
+                    <div className="text-xs">{item.match_date}</div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <img
+                      src={
+                        window.location.origin +
+                        "/image/team/" +
+                        item.team_2_logo
+                      }
+                      className="h-10 object-contain mb-2"
+                    />
+                    <p className="text-xs">{item.team_2_cap_name}</p>
+                  </div>
+                </Link>
+              )))}
+        </div>
+      </div>
+    </>
+  );
+};
+export default BarDay;

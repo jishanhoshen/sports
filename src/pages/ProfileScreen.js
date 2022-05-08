@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGears,
@@ -7,6 +8,10 @@ import {
   faStarHalfAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
+import { setUpCommingAllMatches } from "../redux/actions/MatcheActions";
+
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProfileScreen = () => {
   return (

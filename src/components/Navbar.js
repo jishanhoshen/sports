@@ -1,7 +1,7 @@
 import { faHome, faUsers, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
  const Navbar = () => {
   return (
@@ -12,18 +12,18 @@ import { NavLink, Link } from "react-router-dom";
       >
         <FontAwesomeIcon icon={faUsers} />
       </NavLink>
-      <Link
+      <NavLink
         className="home flex items-center w-14 cursor-pointer justify-center"
         to={"/"}
       >
         <FontAwesomeIcon icon={faHome} />
-      </Link>
-      <Link
+      </NavLink>
+      <NavLink
         className="profile flex items-center w-14 cursor-pointer justify-center"
         to={"profile"}
       >
         <FontAwesomeIcon icon={faUser} />
-      </Link>
+      </NavLink>
     </div>
   );
 }

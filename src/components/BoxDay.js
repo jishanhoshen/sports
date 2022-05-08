@@ -1,163 +1,165 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
 
-export default function BoxDay() {
-  var BoxDaysettings = {
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 2,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          initialSlide: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 320,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+const BoxDay = (props) => {
+  const title = props.title;
+  const [isdata, setIsData] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const data = useSelector((state) => state.MatchReducer.AllBestMatches);
+
+  useEffect(() => {
+    if (props.try) {
+      setIsData(false);
+      setLoading(true);
+    } else if (data.length == 0) {
+      setIsData(false);
+      setLoading(true);
+    } else {
+      setIsData(true);
+      setLoading(false);
+    }
+  });
+
   return (
     <>
       <div>
         <div className="title flex justify-between items-center mx-5 mt-5">
           <h2 className="font-roboto font-bold text-2xl text-slate-50">
-            Comming Matches
+            {title}
           </h2>
           <span className="text-sm text-slate-500 font-medium">View All</span>
         </div>
-        <div className="ml-5">
-          <Slider {...BoxDaysettings}>
-            <Link to="/match" state={"hello"}>
-              <div className="bg-yellow-500 w-36 h-44 mr-4 rounded-lg px-3 mb-2">
-                <div className="flex justify-around py-6">
-                  <img
-                    src={window.location.origin + "/icons/team-1.png"}
-                    className="h-11 m-w-14 object-contain"
-                  />
-                  <img
-                    src={window.location.origin + "/icons/team-2.png"}
-                    className="h-11 m-w-14 object-contain"
-                  />
-                </div>
-                <div className="flex justify-between font-bold text-sm">
-                  <div>
-                    <div className="pb-3 truncate w-20">Barcelons</div>
-                    <div className="truncate w-20">Real Madrid</div>
+        {(loading && (
+          <div className="overflow-y-auto mt-4">
+            <div className="inline-flex overflow-y-scrall">
+              <div className="ml-4 last:mr-4">
+                <div className="bg-slate-50 w-36 h-44 rounded-lg px-3 mb-2">
+                  <div className="flex justify-around py-6">
+                    <div className="h-11 w-11 bg-slate-200"></div>
+                    <div className="h-11 w-11 bg-slate-200"></div>
                   </div>
-                  <div>
-                    <div className="pb-3">0</div>
-                    <div>0</div>
+                  <div className="flex justify-between font-bold text-sm">
+                    <div>
+                      <div className="mb-3 truncate w-20 bg-slate-200 h-4"></div>
+                      <div className="truncate w-20 bg-slate-200 h-4"></div>
+                    </div>
+                    <div>
+                      <div className="mb-3 h-4 bg-slate-200 w-4"></div>
+                      <div className=" h-4 bg-slate-200 w-4"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </Link>
-            <Link to={"/comming"}>
-              <div className="bg-slate-50 w-36 h-44 mr-4 rounded-lg px-3 mb-2">
-                <div className="flex justify-around py-6">
-                  <img
-                    src={window.location.origin + "/icons/team-1.png"}
-                    className="h-11 m-w-14 object-contain"
-                  />
-                  <img
-                    src={window.location.origin + "/icons/team-2.png"}
-                    className="h-11 m-w-14 object-contain"
-                  />
-                </div>
-                <div className="flex justify-between font-bold text-sm">
-                  <div>
-                    <div className="pb-3 truncate w-20">Barcelons</div>
-                    <div className="truncate w-20">Real Madrid</div>
+              <div className="ml-4 last:mr-4">
+                <div className="bg-slate-50 w-36 h-44 rounded-lg px-3 mb-2">
+                  <div className="flex justify-around py-6">
+                    <div className="h-11 w-11 bg-slate-200"></div>
+                    <div className="h-11 w-11 bg-slate-200"></div>
                   </div>
-                  <div>
-                    <div className="pb-3">0</div>
-                    <div>0</div>
+                  <div className="flex justify-between font-bold text-sm">
+                    <div>
+                      <div className="mb-3 truncate w-20 bg-slate-200 h-4"></div>
+                      <div className="truncate w-20 bg-slate-200 h-4"></div>
+                    </div>
+                    <div>
+                      <div className="mb-3 h-4 bg-slate-200 w-4"></div>
+                      <div className=" h-4 bg-slate-200 w-4"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </Link>
-            <Link to={"/comming"}>
-              <div className="bg-blue-500 w-36 h-44 mr-4 rounded-lg px-3 mb-2">
-                <div className="flex justify-around py-6">
-                  <img
-                    src={window.location.origin + "/icons/team-1.png"}
-                    className="h-11 m-w-14 object-contain"
-                  />
-                  <img
-                    src={window.location.origin + "/icons/team-2.png"}
-                    className="h-11 m-w-14 object-contain"
-                  />
-                </div>
-                <div className="flex justify-between font-bold text-sm">
-                  <div>
-                    <div className="pb-3 truncate w-20">Barcelons</div>
-                    <div className="truncate w-20">Real Madrid</div>
+              <div className="ml-4 last:mr-4">
+                <div className="bg-slate-50 w-36 h-44 rounded-lg px-3 mb-2">
+                  <div className="flex justify-around py-6">
+                    <div className="h-11 w-11 bg-slate-200"></div>
+                    <div className="h-11 w-11 bg-slate-200"></div>
                   </div>
-                  <div>
-                    <div className="pb-3">0</div>
-                    <div>0</div>
+                  <div className="flex justify-between font-bold text-sm">
+                    <div>
+                      <div className="mb-3 truncate w-20 bg-slate-200 h-4"></div>
+                      <div className="truncate w-20 bg-slate-200 h-4"></div>
+                    </div>
+                    <div>
+                      <div className="mb-3 h-4 bg-slate-200 w-4"></div>
+                      <div className=" h-4 bg-slate-200 w-4"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </Link>
-            <Link to={"/comming"}>
-              <div className="bg-red-500 w-36 h-44 mr-4 rounded-lg px-3 mb-2">
-                <div className="flex justify-around py-6">
-                  <img
-                    src={window.location.origin + "/icons/team-1.png"}
-                    className="h-11 m-w-14 object-contain"
-                  />
-                  <img
-                    src={window.location.origin + "/icons/team-2.png"}
-                    className="h-11 m-w-14 object-contain"
-                  />
-                </div>
-                <div className="flex justify-between font-bold text-sm">
-                  <div>
-                    <div className="pb-3 truncate w-20">Barcelons</div>
-                    <div className="truncate w-20">Real Madrid</div>
+              <div className="ml-4 last:mr-4">
+                <div className="bg-slate-50 w-36 h-44 rounded-lg px-3 mb-2">
+                  <div className="flex justify-around py-6">
+                    <div className="h-11 w-11 bg-slate-200"></div>
+                    <div className="h-11 w-11 bg-slate-200"></div>
                   </div>
-                  <div>
-                    <div className="pb-3">0</div>
-                    <div>0</div>
+                  <div className="flex justify-between font-bold text-sm">
+                    <div>
+                      <div className="mb-3 truncate w-20 bg-slate-200 h-4"></div>
+                      <div className="truncate w-20 bg-slate-200 h-4"></div>
+                    </div>
+                    <div>
+                      <div className="mb-3 h-4 bg-slate-200 w-4"></div>
+                      <div className=" h-4 bg-slate-200 w-4"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </Link>
-          </Slider>
-        </div>
+            </div>
+          </div>
+        )) ||
+          (isdata && (
+            <div className="overflow-y-auto mt-4">
+              <div className="inline-flex overflow-y-scrall">
+                {data.map((item) => (
+                  <Link
+                    key={item.id}
+                    to={"/match/" + item.id}
+                    className="inline-block ml-4 last:mr-4"
+                  >
+                    <div className="bg-slate-50 w-36 h-44 rounded-lg px-3 mb-2">
+                      <div className="flex justify-around py-6">
+                        <img
+                          src={
+                            window.location.origin +
+                            "/image/team/" +
+                            item.team_1_logo
+                          }
+                          className="h-11 m-w-14 object-contain"
+                        />
+                        <img
+                          src={
+                            window.location.origin +
+                            "/image/team/" +
+                            item.team_2_logo
+                          }
+                          className="h-11 m-w-14 object-contain"
+                        />
+                      </div>
+                      <div className="flex justify-between font-bold text-sm">
+                        <div>
+                          <div className="pb-3 truncate w-20">
+                            {item.team_1_cap_name}
+                          </div>
+                          <div className="truncate w-20">
+                            {item.team_2_cap_name}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="pb-3">0</div>
+                          <div>0</div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
       </div>
     </>
   );
-}
+};
 
+export default BoxDay;
