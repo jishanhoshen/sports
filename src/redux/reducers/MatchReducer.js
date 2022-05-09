@@ -5,6 +5,7 @@ const initialState = {
   CommingMatchs: [],
   AllBestMatches: [],
   MatchHistory: [],
+  Clubs: [],
 };
 
 export const MatchReducer = (state = initialState, { type, payload }) => {
@@ -13,10 +14,12 @@ export const MatchReducer = (state = initialState, { type, payload }) => {
       return { ...state, DataLoaded: payload };
     case MatchActionType.SET_UP_COMMING_ALL_MATCHES:
       return { ...state, CommingMatchs: payload };
-    case MatchActionType.SET_UP_All_BEST_MATCHES:
+    case MatchActionType.SET_All_BEST_MATCHES:
       return { ...state, AllBestMatches: payload };
-    case MatchActionType.SET_UP_MATCH_HISTORY:
+    case MatchActionType.SET_MATCH_HISTORY:
       return { ...state, MatchHistory: payload };
+    case MatchActionType.SET_CLUBS:
+      return { ...state, Clubs: payload };
     default:
       return state;
   }

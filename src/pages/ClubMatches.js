@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import ClubNav from "../components/ClubNav";
 import BoxDay from "../components/BoxDay";
 import BarDay from "../components/BarDay";
+import Clubs from "../components/Clubs";
 
 export default class ClubMatches extends Component {
   render() {
@@ -12,10 +13,13 @@ export default class ClubMatches extends Component {
         <ClubNav />
         <div className="bodyContent content-scrall snap-none">
           <div className="pt-4">
-            <BoxDay />
+            <Clubs title="Browse Clubs"/>
           </div>
           <div className="pt-4">
-            <BarDay />
+            <BoxDay title="Best Matches" />
+          </div>
+          <div className="pt-4">
+            <BarDay title="Resent Matches" />
           </div>
           <p className="text-xs text-slate-50 p-4 ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu
